@@ -4,48 +4,71 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ARQUIVO Nº 12</title>
+
 <style>
-  :root {
-    --red: #d40000;
-    --dark-red: #7d0000;
-    --black: #020202;
-  }
-  * { box-sizing: border-box; }
-  html, body { margin: 0; min-height: 100%; background: var(--black); }
-  body {
-    color: var(--red);
-    font-family: Georgia, "Times New Roman", serif;
-    overflow-x: hidden;
-  }
-  .page {
-    min-height: 100vh;
-    position: relative;
-    padding: 7vh 7vw 12vh;
-    background:
-      radial-gradient(circle at 50% 15%, rgba(100,0,0,.09), transparent 32%),
-      #020202;
-  }
-  .noise {
-    pointer-events: none;
-    position: fixed;
-    inset: 0;
-    opacity: .045;
-    z-index: 5;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
-  }
-  .story {
-    width: min(850px, 100%);
-    margin: 0 auto;
-    font-size: clamp(16px, 1.45vw, 20px);
-    line-height: 1.75;
-    text-shadow: 0 0 5px rgba(212,0,0,.18);
-  }
-  .story p { margin: 0 0 1.15em; }
+:root {
+  --red: #d40000;
+  --dark-red: #7d0000;
+  --black: #020202;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--black);
+}
+
+body {
+  color: var(--red);
+  font-family: Georgia, "Times New Roman", serif;
+  overflow-x: hidden;
+}
+
+.page {
+  min-height: 100vh;
+  position: relative;
+  padding: 7vh 7vw 12vh;
+  background:
+    radial-gradient(
+      circle at 50% 15%,
+      rgba(100,0,0,.09),
+      transparent 32%
+    ),
+    #020202;
+}
+
+.noise {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  opacity: .045;
+  z-index: 5;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
+}
+
+.story {
+  width: min(850px, 100%);
+  margin: 0 auto;
+  font-size: clamp(16px, 1.45vw, 20px);
+  line-height: 1.75;
+  text-shadow: 0 0 5px rgba(212,0,0,.18);
+}
+
+.story p {
+  margin: 0 0 1.15em;
+}
+
 .mirror {
   position: fixed;
   right: 28px;
-top: 50%;
-transform: translateY(-50%);
+  top: 50%;
+  transform: translateY(-50%);
   width: 150px;
   height: 215px;
   cursor: pointer;
@@ -61,72 +84,108 @@ transform: translateY(-50%);
   height: 100%;
   object-fit: contain;
   display: block;
-} 
+}
 
+.panic {
+  animation: shake .055s infinite;
+}
 
-  .image-template {
-    display: none;
-  }
-  .panic {
-    animation: shake .055s infinite;
-  }
-  @keyframes shake {
-    0% { transform: translate(0,0) rotate(0); }
-    20% { transform: translate(-7px, 3px) rotate(-.35deg); }
-    40% { transform: translate(6px, -4px) rotate(.35deg); }
-    60% { transform: translate(-4px, -2px) rotate(.2deg); }
-    80% { transform: translate(7px, 4px) rotate(-.25deg); }
-    100% { transform: translate(0,0) rotate(0); }
-  }
-  #spam {
-    position: fixed;
-    inset: 0;
-    z-index: 30;
-    display: none;
-    overflow: hidden;
-    pointer-events: none;
-    font: 700 15px/1.05 monospace;
-    color: #ff0000;
-    background: rgba(0,0,0,.2);
-    word-break: break-all;
-  }
-  #closeScreen {
-    position: fixed;
-    inset: 0;
-    z-index: 40;
-    display: none;
-    background: #000;
-    color: #d40000;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font: 700 clamp(18px, 4vw, 42px)/1.4 monospace;
-    letter-spacing: 3px;
-  }
-  .warning {
-    margin: 5rem auto 0;
-    width: min(850px, 100%);
-    border-top: 1px solid #380000;
-    padding-top: 1rem;
-    font: 11px/1.5 monospace;
-    opacity: .5;
-    text-align: center;
-  }
-  @media (max-width: 700px) {
-    .page { padding: 5rem 5vw 8rem; }
-    .mirror { width: 100px; height: 145px; right: 14px; top: 14px; }
+@keyframes shake {
+  0% {
+    transform: translate(0,0) rotate(0);
   }
 
-  
+  20% {
+    transform: translate(-7px, 3px) rotate(-.35deg);
+  }
+
+  40% {
+    transform: translate(6px, -4px) rotate(.35deg);
+  }
+
+  60% {
+    transform: translate(-4px, -2px) rotate(.2deg);
+  }
+
+  80% {
+    transform: translate(7px, 4px) rotate(-.25deg);
+  }
+
+  100% {
+    transform: translate(0,0) rotate(0);
+  }
+}
+
+#spam {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  display: none;
+  overflow: hidden;
+  pointer-events: none;
+  font: 700 15px/1.05 monospace;
+  color: #ff0000;
+  background: rgba(0,0,0,.2);
+  word-break: break-all;
+}
+
+#closeScreen {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: none;
+  background: #000;
+  color: #d40000;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font: 700 clamp(18px, 4vw, 42px)/1.4 monospace;
+  letter-spacing: 3px;
+}
+
+#closeScreen span {
+  display: inline-block;
+}
+
+.warning {
+  margin: 5rem auto 0;
+  width: min(850px, 100%);
+  border-top: 1px solid #380000;
+  padding-top: 1rem;
+  font: 11px/1.5 monospace;
+  opacity: .5;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .page {
+    padding: 5rem 5vw 8rem;
+  }
+
+  .mirror {
+    width: 100px;
+    height: 145px;
+    right: 14px;
+    top: 14px;
+  }
+}
 </style>
 </head>
+
 <body>
+
 <div class="noise"></div>
 
 <main class="page" id="page">
- <div class="mirror" id="mirror">
-  <img src="mirror.png" alt="mirror">
-</div>
+
+  <div class="mirror" id="mirror">
+    <img src="mirror.png" alt="mirror">
+  </div>
+
+  <!--
+    COLE AQUI TODA A SUA HISTÓRIA
+    EXATAMENTE COMO VOCÊ JÁ TEM
+  -->
 
   <article class="story">
     <p>*ARQUIVO Nº 12 – RELATO DE EMMA WILSON*</p>
@@ -236,13 +295,21 @@ transform: translateY(-50%);
 <p>Mas no meu celular, ainda tem uma foto que ele mandou naquela semana. É uma selfie dele, sorrindo. Só que o sorriso tá torto. E os olhos dele... um é maior que o outro.</p>
 <p>(O relato de Emma Wilson termina aqui.</p>
 <p>Três dias depois, ela mudou de cidade. Mas na última noite no posto, ela fez um vídeo.)</p>
-  </article>
+   </article>
 
-  <div class="warning">ARQUIVO Nº 12 // ACESSO NÃO AUTORIZADO // NÃO RESPONDA</div>
+  <div class="warning">
+    ARQUIVO Nº 12 // ACESSO NÃO AUTORIZADO // NÃO RESPONDA
+  </div>
+
 </main>
 
 <div id="spam"></div>
-<div id="closeScreen">VOCÊ OLHOU.<br><span>AGORA ELE SABE.</span></div>
+
+<div id="closeScreen">
+  VOCÊ OLHOU.
+  <br>
+  <span>AGORA ELE SABE.</span>
+</div>
 
 <script>
 (() => {
@@ -275,40 +342,60 @@ transform: translateY(-50%);
     ];
 
     let count = 0;
+
     const spammer = setInterval(() => {
       let chunk = "";
+
       for (let i = 0; i < 120; i++) {
-        chunk += messages[Math.floor(Math.random() * messages.length)];
+        chunk += messages[
+          Math.floor(Math.random() * messages.length)
+        ];
       }
+
       spam.textContent += chunk;
-      window.scrollTo(Math.random() * 10, Math.random() * 10);
+
+      window.scrollTo(
+        Math.random() * 10,
+        Math.random() * 10
+      );
+
       count++;
+
       if (count >= 18) {
         clearInterval(spammer);
+
         setTimeout(() => {
+
           page.style.display = "none";
           spam.style.display = "none";
           closeScreen.style.display = "flex";
-setTimeout(() => {
-    document.body.innerHTML = "";
-    document.body.style.background = "#000";
 
-    window.location.href = "https://youtu.be/6Zj6DFAnYkc?is=SxLoC55bNEXScG0P";
+          setTimeout(() => {
 
-}, 1000);
+            window.location.href =
+              "https://www.youtube.com/watch?v=6Zj6DFAnYkc";
+
+          }, 1000);
+
         }, 350);
       }
+
     }, 90);
   }
 
   mirror.addEventListener("click", activate);
-  mirror.addEventListener("keydown", e => {
+
+  mirror.addEventListener("keydown", (e) => {
+
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
       activate();
     }
+
   });
+
 })();
 </script>
+
 </body>
 </html>
