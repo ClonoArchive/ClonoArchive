@@ -289,12 +289,13 @@ transform: translateY(-50%);
           page.style.display = "none";
           spam.style.display = "none";
           closeScreen.style.display = "flex";
-          setTimeout(() => {
-            // Simula o fechamento; navegadores modernos bloqueiam window.close()
-            // em abas que não foram abertas por script.
-            window.close();
-            closeScreen.innerHTML = "FIM DO ARQUIVO.<br><span>REABRA SE TIVER CORAGEM.</span>";
-          }, 1000);
+setTimeout(() => {
+    document.body.innerHTML = "";
+    document.body.style.background = "#000";
+
+    window.location.href = "https://youtu.be/6Zj6DFAnYkc?is=SxLoC55bNEXScG0P";
+
+}, 1000);
         }, 350);
       }
     }, 90);
