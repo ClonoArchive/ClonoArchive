@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ARQUIVO Nº 12</title>
+<style>
+  :root {
+    --red: #d40000;
+    --dark-red: #7d0000;
+    --black: #020202;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 100%; background: var(--black); }
+  body {
+    color: var(--red);
+    font-family: Georgia, "Times New Roman", serif;
+    overflow-x: hidden;
+  }
+  .page {
+    min-height: 100vh;
+    position: relative;
+    padding: 7vh 7vw 12vh;
+    background:
+      radial-gradient(circle at 50% 15%, rgba(100,0,0,.09), transparent 32%),
+      #020202;
+  }
+  .noise {
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    opacity: .045;
+    z-index: 5;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
+  }
+  .story {
+    width: min(850px, 100%);
+    margin: 0 auto;
+    font-size: clamp(16px, 1.45vw, 20px);
+    line-height: 1.75;
+    text-shadow: 0 0 5px rgba(212,0,0,.18);
+  }
+  .story p { margin: 0 0 1.15em; }
+.mirror {
+  position: fixed;
+  right: 28px;
+top: 50%;
+transform: translateY(-50%);
+  width: 150px;
+  height: 215px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.mirror:hover {
+  transform: translateY(-50%) scale(1.025);
+}
+
+.mirror img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+} 
+
+
+  .image-template {
+    display: none;
+  }
+  .panic {
+    animation: shake .055s infinite;
+  }
+  @keyframes shake {
+    0% { transform: translate(0,0) rotate(0); }
+    20% { transform: translate(-7px, 3px) rotate(-.35deg); }
+    40% { transform: translate(6px, -4px) rotate(.35deg); }
+    60% { transform: translate(-4px, -2px) rotate(.2deg); }
+    80% { transform: translate(7px, 4px) rotate(-.25deg); }
+    100% { transform: translate(0,0) rotate(0); }
+  }
+  #spam {
+    position: fixed;
+    inset: 0;
+    z-index: 30;
+    display: none;
+    overflow: hidden;
+    pointer-events: none;
+    font: 700 15px/1.05 monospace;
+    color: #ff0000;
+    background: rgba(0,0,0,.2);
+    word-break: break-all;
+  }
+  #closeScreen {
+    position: fixed;
+    inset: 0;
+    z-index: 40;
+    display: none;
+    background: #000;
+    color: #d40000;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font: 700 clamp(18px, 4vw, 42px)/1.4 monospace;
+    letter-spacing: 3px;
+  }
+  .warning {
+    margin: 5rem auto 0;
+    width: min(850px, 100%);
+    border-top: 1px solid #380000;
+    padding-top: 1rem;
+    font: 11px/1.5 monospace;
+    opacity: .5;
+    text-align: center;
+  }
+  @media (max-width: 700px) {
+    .page { padding: 5rem 5vw 8rem; }
+    .mirror { width: 100px; height: 145px; right: 14px; top: 14px; }
+  }
+
+  
+</style>
+</head>
+<body>
+<div class="noise"></div>
+
+<main class="page" id="page">
+ <div class="mirror" id="mirror">
+  <img src="mirror.png" alt="mirror">
+</div>
+
+  <article class="story">
+    <p>*ARQUIVO Nº 12 – RELATO DE EMMA WILSON*</p>
+<p>&quot;Eu vi o que ele faz com quem responde...&quot;</p>
+<p>Meu nome é Emma Wilson. Tenho 23 anos e trabalho no turno da noite de um posto de gasolina abandonado na periferia de Gary, Indiana. O posto fica na esquina da 5th Avenue com a Carolina Street , quase ninguém passa depois das 22 horas. É o tipo de lugar que só tem luz própria e o Silêncio...</p>
+<p>Mas isso não é sobre o posto.É sobre o que aconteceu comigo nas noites de outubro</p>
+<p>Tudo começou com uma história, Minha avó, que morou em Gary desde os anos 60, sempre me contava a lenda do &quot;menino que ria errado&quot;. Ela dizia que nos anos 80, uma criança chamada Samuel Cloninger sumiu no Miller Woods (aquele bosque que fica perto da antiga siderúrgica) Samuel era gêmeo de outro menino, mas todo mundo na vizinhança sabia que ele era... estranho.</p>
+<p>Não no sentido de malvado. No sentido de errado? Bom eu não entendi o que ela quis dizer com isso porém é a única forma que ela conseguiu explicar</p>
+<p>Ele ria quando a mãe caía, minha avó dizia que ele imitava a voz do pai para fazer a mãe brigar com ele. Um dia, ele olhou pro &quot;irmão&quot; no espelho e disse: &quot;Um de nós é o original. O outro é o erro, Você acha que eu sou o erro?&quot;</p>
+<p>No dia seguinte, Samuel sumiu...</p>
+<p>O irmão dele nunca mais falou sobre aquilo. Mas anos depois, o irmão também sumiu. E aí começaram os relatos.</p>
+<p>Relatos de pessoas que viam alguém igual a elas na rua, mas com um detalhe errado. Um dedo a mais. Um olho de cor diferente. Um sorriso que não combinava com o rosto,elas eram exatamente iguais como clones...como reflexos..porém não eram elas.</p>
+<p>Minha avó me ensinou uma regra: &quot;Se você estiver sozinho na rua, especialmente de noite, e ouvir alguém chamar seu nome... você não olha. Você não responde. Você anda mais rápido.&quot;</p>
+<p>Ela dizia que o Clono ( o apelido que deram a Samuel ) procurava pessoas que reconhecessem o erro. Porque ele só conseguia se fixar no mundo real quando alguém percebia que ele não era perfeito.</p>
+<p>Parece bobagem de criança, né? um pouco clichê?</p>
+<p>Pois eu achei que era. Até começar a trabalhar no posto.</p>
+<p>A primeira noite estranha foi em 12 de outubro. Eu estava no caixa, lendo um livro chamado &quot;O Homem Duplicado&quot;, do José Saramago, quando ouvi uma batida no vidro da porta. Não tinha ninguém. Levantei, olhei para a rua deserta. Nada...</p>
+<p>Duas horas depois, outra batida. Dessa vez, três batidinhas seguidas. Como se alguém estivesse com os nós dos dedos encostados no vidro.</p>
+<p>Fui até a porta. Não tinha ninguém. Mas no chão, tinha uma carta.</p>
+<p>Não era uma carta comum. Era um envelope amarelo, velho, com um lacre dourado. Dentro, um pedaço de papel com uma caligrafia infantil:</p>
+<p>&quot;Você não olhou. Você não respondeu, Parabéns, Emma. Você é mais esperta do que eles.&quot;</p>
+<p>A carta não tinha remetente. Mas no verso, tinha uma foto polaroid.</p>
+<p>A foto mostrava um grupo de jovens na frente de uma escola abandonada. Eles estavam rindo, fazendo gestos bobos. No canto inferior direito, escrito  à mão alguns nomes ?</p>
+<p>&quot;Doug, Nauk, Duda, Bierto, Will, Gil, Détrio, Eyezin e Ph – 2019. Último dia antes da Roosevelt fechar.&quot;</p>
+<p>Debaixo da foto, outra frase:</p>
+<p>&quot;Pergunte a eles sobre o bosque. Mas não pergunte muito alto. Ele ouve.&quot;</p>
+<p>Na noite seguinte, eu pesquisei os nomes da foto.</p>
+<p>Não demorei muito. Doug Miller  19 anos, mora na zona norte de Gary, estudou na Theodore Roosevelt High School. Nauk Thompson  21 anos, vizinho de Doug. Duda Ferreira 20, única mulher do grupo. Os outros  Bierto, Will, Gil, Détrio, Eyezin e Ph. Todos adolescentes, todos da mesma escola, todos ainda vivos,pelo menos eu acho</p>
+<p>Só que uma notícia me chamou a atenção, a Roosevelt foi interditada em 2020. Motivo oficial foi contaminação por amianto e deterioração estrutural. Motivo não oficial três professores pediram transferência ao mesmo tempo depois de dizerem que viam uma criança? nos corredores</p>
+<p>Uma criança que ria errado?</p>
+<p>Eu precisava fazer algo,pelo menos buscar algumas respostas.Entao eu fiz.</p>
+<p>Eu encontrei o Doug primeiro. Ele trabalha num lava-rápido na 15th Avenue. Quando mostrei a foto, ele ficou sério</p>
+<p>&quot;De onde você tirou isso?&quot; - ele perguntou, com a voz tremendo.</p>
+<p>Contei sobre a carta. Ele me olhou por um longo tempo, depois disse:</p>
+<p>&quot; A gente pensou que tinha acabado. Depois que a Roosevelt fechou, a gente achou que ele tinha ficado lá. Enterrado. Mas o Eyezin disse que viu ele na casa da Duda. E o Gil jura que ouviu a voz do Samuel chamando ele do outro lado da rua, no meio da noite.&quot;</p>
+<p>Chama o quê? perguntei.</p>
+<p>&quot;Clono&quot; — Doug respondeu.  &quot;A gente começou a chamar ele assim. Porque ele clona as pessoas. Só que sempre erra. Uma vez, o Bierto viu um cara igual a ele no ponto de ônibus. Mesmo rosto, mesmo casaco. Só que o &quot;Bierto&quot; tava usando dois tênis direitos.&quot;</p>
+<p>Ele respirou fundo,e continuou.</p>
+<p>&quot; O pior é que a gente não sabe o que ele quer. Ele não mata. Ele só... aparece. E quando você vê ele, ele nunca tá olhando de volta. Ele tá sempre olhando pro lado. Como se estivesse esperando a gente cometer um erro.&quot;</p>
+<p>Que erro? — perguntei para ele.</p>
+<p>Doug me encarou.</p>
+<p>&quot;Responder. Quando você tá sozinho e ouve alguém chamar seu nome... se você responder, ele pode te imitar. Ele pode virar você. A gente aprendeu isso no bosque. O Will respondeu uma vez. Ficou três dias sem conseguir dormir porque ouvia a própria voz vindo do banheiro.&quot;</p>
+<p>Ele deu um passo mais perto.</p>
+<p>&quot; Por que você tá investigando isso, Emma? Você tá correndo risco. A gente achou que ele tinha ficado preso em alguma coisa. A gente fez um ritual, enterrou um espelho dourado no bosque, e desejamos  praquele demônio nunca mais sair. Mas quando o Nauk foi lá no mês passado... o espelho não tava mais enterrado.&quot;</p>
+<p>&quot;Eu encontrei o Ph depois. Ou melhor, tentei encontrar.&quot;</p>
+<p>O Doug me disse que o Ph era o único que tinha conseguido fugir. Depois daquela noite no bosque, ele acordou com a própria voz vindo do rádio do carro. Era ele cantando uma música que ele não sabia a letra ,mas a Tia dele cantava pra ele quando criança. Só que ela morreu quando ele tinha 7 anos.</p>
+<p>No dia seguinte, ele pegou um ônibus pra Chicago e nunca mais voltou.</p>
+<p>&quot; A gente recebe mensagem dele de vez em quando&quot; o Doug disse —, &quot;mas ele nunca atende ligação. Ele diz que ouve um chiado no telefone quando a gente fala o nome dele.&quot;</p>
+<p>Eu consegui o número do Ph. Mandei uma mensagem. Ele respondeu horas depois, com um texto seco dizendo:</p>
+<p>&quot;Não me ligue. Não fale meu nome em voz alta. Ele me achou aqui em Chicago. Eu tô correndo. Mas ele sempre chega antes.&quot;</p>
+<p>Anexado, tinha uma foto. Era o Ph, em frente a uma estação de trem em Chicago. Só que atrás dele, no reflexo de uma vitrine, uma silhueta infantil estava parada. Imóvel. Observando.</p>
+<p>A última noite que eu trabalhei no posto foi em 31 de outubro. Véspera de Dia das Bruxas.</p>
+<p>Não tinha um cliente. Eu já tava arrumando minhas coisas pra ir embora quando ouvi.</p>
+<p>Um barulho de passos.</p>
+<p>Não na rua. No telhado.</p>
+<p>Levantei a cabeça. O teto de zinco rangeu. Alguém  ou alguma coisa  andava lá em cima. Devagar. Pesado.</p>
+<p>Eu peguei meu celular, liguei a lanterna e abri a porta dos fundos. O estacionamento tava vazio. Eu olhei pro telhado...</p>
+<p>Não tinha ninguém.</p>
+<p>Mas no chão, perto da roda do meu carro, tinha outra carta.</p>
+<p>Dessa vez, o envelope era preto. O lacre, prateado. Dentro, uma folha sulfite com uma frase:</p>
+<p>&quot;Emma, você falou sobre mim com o Doug.&quot;</p>
+<p>Meu coração parou.</p>
+<p>Abaixo, uma foto: eu, no meu quarto, dormindo. A foto tinha sido tirada de dentro do meu armário.</p>
+<p>No canto inferior, outra frase:</p>
+<p>&quot;Você não respondeu quando eu te chamei. Então eu vou te mostrar como sou bom. Eles estão vindo aí. Doug. Nauk. Duda. Ph. Todos. Eles estão vindo te contar a verdade. Mas cuidado, Emma. O Détrio não é mais o Détrio. Ele respondeu. Ele respondeu. E o Ph... o Ph tá correndo. Mas ele sabe que não adianta.&quot;</p>
+<p>Eu arranquei o carro e fui direto pra casa do Doug. Não pensei duas vezes. Quando cheguei, a maioria tava lá. Doug, Nauk, Duda, Bierto, Will, Gil e Eyezin. O Détrio não tava. E o Ph também não.</p>
+<p>&quot;O Détrio sumiu há dois dias&quot; a Duda disse, chorando —. &quot;Ele tava na rua, e ouviu alguém chamar ele de &quot;Asmático&quot;. Só que só a gente chama ele de Asmático. Ele respondeu. E aí... ele não voltou.&quot;</p>
+<p>Eu mostrei a foto do meu quarto e a mensagem do Ph. Eles ficaram em silêncio.</p>
+<p>&quot;O- o Ph foi o primeiro&quot; o Nauk disse, com a voz baixa e gaguejando —. &quot;Ele viu o Clono antes de todo mundo. Na Roosevelt. Foi num espelho do banheiro da sala de arte. O reflexo dele piscou atrasado. Depois daquilo, o Ph nunca mais foi o mesmo. E quando a gente fez o ritual no bosque, ele viu alguma coisa que a gente não viu. Ele nunca contou o que foi. Só disse que precisava ir embora.&quot;</p>
+<p>&quot;Mas...a gente ainda pode salvar o Détrio&quot; o Eyezin disse, segurando uma lanterna. — &quot;E a gente precisa trazer o Ph de volta. Se a gente não destruir o espelho de vez, ele vai pegar todos nós, um por um. E quando ele aprender a ser perfeito... ninguém vai saber quem é quem.&quot; O Will disse.</p>
+<p>Nós fomos.</p>
+<p>Miller Woods é assustador mesmo durante o dia. À noite, parece um pesadelo. Árvores tortas, galhos que parecem dedos. O chão molhado, coberto de folhas mortas.</p>
+<p>O Nauk sabia o caminho. Ele guiou a gente até uma clareira. No centro, enterrado até a metade na terra, tinha um espelho de mão dourado, rachado.</p>
+<p>Só que não tava sozinho.</p>
+<p>O Détrio tava lá. Em pé. Olhando pro vazio.</p>
+<p>&quot;Détrio?&quot; o Bierto chamou.</p>
+<p>Ele virou a cabeça.</p>
+<p>Era o rosto do Détrio. Mas o olho esquerdo era maior que o direito. E o sorriso não se movia junto com o rosto.</p>
+<p>&quot;Achei que vocês demorariam mais &quot; a coisa disse, com a voz do Détrio, mas com uma entonação infantil. &quot;Eu ia me apresentar com calma. Mas vocês sempre apressam as coisas.&quot;</p>
+<p>O &quot;Détrio&quot; levantou a mão. Ele segurava uma carta dourada, igual à que eu tinha encontrado.</p>
+<p>Samuel Cloninger enviou saudações ele disse, e riu.</p>
+<p>Não foi uma risada normal. Foi uma risada deslocada, como se ele tivesse esquecido como se ria.</p>
+<p>O Doug deu um passo a frente.</p>
+<p>&quot;Onde tá o Détrio de verdade?&quot;</p>
+<p>A criatura inclinou a cabeça.</p>
+<p>&quot; Détrio tá comigo. A gente compartilha agora. Ele me vê. Eu vejo ele. Mas ele não gosta. Porque toda vez que ele olha no espelho, ele vê duas pessoas. E uma delas tem o rosto errado.&quot;</p>
+<p>&quot;E o Ph? &quot; O Gil gritou enquanto segurava um pedaço de pau &quot; O que você fez com ele?&quot;</p>
+<p>O sorriso da criatura se alargou.</p>
+<p>&quot;O Ph tá correndo. Ele sempre corre. Mas ele sabe que eu vou chegar. Porque eu sempre chego. Já cheguei em Chicago. Já cheguei na estação. Já cheguei no reflexo da vitrine. O Ph não dorme mais. Porque quando ele fecha os olhos, ele me vê. E quando ele abre... eu tô lá.&quot;</p>
+<p>O Nauk correu em direção ao espelho e enterrou ele de novo, com as mãos, cavando a terra como um louco. O &quot;Détrio&quot; gritou. Um grito que não era humano.</p>
+<p>E aí ele sumiu.</p>
+<p>Não evaporou. Não virou fumaça. Ele simplesmente não estava mais lá. Mas no chão, onde ele tinha estado, a terra estava molhada e tinha uma pegada pequena, de criança.</p>
+<p>Nós levamos o Détrio pro hospital.</p>
+<p>Ele tava vivo, mas não lembrava de nada. Só dizia que tinha visto uma criança no escuro, e a criança tinha o mesmo rosto que ele.</p>
+<p>O médico disse que foi &quot;choque psicótico&quot;.</p>
+<p>Nós não contamos a verdade.</p>
+<p>Mas eu sei de uma coisa: naquela noite, quando eu cheguei em casa, o espelho do meu banheiro tinha uma rachadura nova. E dentro da rachadura, grudada, tinha um fio de cabelo loiro.</p>
+<p>Eu não sou loira.</p>
+<p>Eu cortei o cabelo. Pintei de preto,Não como moda. Como sobrevivência...</p>
+<p>Porque o Clono só pode te clonar se te reconhecer. Se você for igual do que ele viu na última vez.</p>
+<p>Na semana seguinte, eu recebi uma mensagem do Ph.</p>
+<p>Era um áudio. Eu não queria ouvir. Mas eu precisava.</p>
+<p>A voz dele tava diferente. Mais rouca. Mais cansada.</p>
+<p>&quot;Emma, você não devia ter ido no bosque. Você devia ter corrido igual a mim. Mas agora ele já viu seu rosto. Ele já sabe seu nome. Eu tô em Chicago, mas ele apareceu aqui também. Não importa onde você vai. Ele sempre chega antes. A única coisa que funciona é não ser quem ele espera. Muda de cabelo. Muda de nome. Muda de cidade. Mas mesmo assim... ele ainda vai te achar. Porque ele não é um fantasma. Ele é uma lembrança. E você não pode matar uma lembrança. Eu vou continuar correndo. Mas eu sei que um dia... ele vai me encontrar. E quando ele me encontrar... ele vai acertar. E aí eu vou ser ele. E ele vai ser eu. E ninguém vai saber a diferença.&quot;</p>
+<p>O áudio terminou...</p>
+<p>Eu nunca mais ouvi o Ph.</p>
+<p>Mas no meu celular, ainda tem uma foto que ele mandou naquela semana. É uma selfie dele, sorrindo. Só que o sorriso tá torto. E os olhos dele... um é maior que o outro.</p>
+<p>(O relato de Emma Wilson termina aqui.</p>
+<p>Três dias depois, ela mudou de cidade. Mas na última noite no posto, ela fez um vídeo.)</p>
+  </article>
+
+  <div class="warning">ARQUIVO Nº 12 // ACESSO NÃO AUTORIZADO // NÃO RESPONDA</div>
+</main>
+
+<div id="spam"></div>
+<div id="closeScreen">VOCÊ OLHOU.<br><span>AGORA ELE SABE.</span></div>
+
+<script>
+(() => {
+  const mirror = document.getElementById("mirror");
+  const page = document.getElementById("page");
+  const spam = document.getElementById("spam");
+  const closeScreen = document.getElementById("closeScreen");
+
+  let activated = false;
+
+  function activate() {
+    if (activated) return;
+    activated = true;
+
+    page.classList.add("panic");
+    document.body.style.overflow = "hidden";
+    spam.style.display = "block";
+
+    const messages = [
+      "EU VI VOCÊ. ",
+      "NÃO OLHE. ",
+      "VOCÊ RESPONDEU. ",
+      "SAMUEL ESTÁ AQUI. ",
+      "ELE JÁ SABE SEU NOME. ",
+      "NÃO CONFIE NO REFLEXO. ",
+      "VOCÊ NÃO É O ORIGINAL. ",
+      "UM DE NÓS É O ERRO. ",
+      "NÃO FECHE OS OLHOS. ",
+      "ELE SEMPRE CHEGA ANTES. "
+    ];
+
+    let count = 0;
+    const spammer = setInterval(() => {
+      let chunk = "";
+      for (let i = 0; i < 120; i++) {
+        chunk += messages[Math.floor(Math.random() * messages.length)];
+      }
+      spam.textContent += chunk;
+      window.scrollTo(Math.random() * 10, Math.random() * 10);
+      count++;
+      if (count >= 18) {
+        clearInterval(spammer);
+        setTimeout(() => {
+          page.style.display = "none";
+          spam.style.display = "none";
+          closeScreen.style.display = "flex";
+          setTimeout(() => {
+            // Simula o fechamento; navegadores modernos bloqueiam window.close()
+            // em abas que não foram abertas por script.
+            window.close();
+            closeScreen.innerHTML = "FIM DO ARQUIVO.<br><span>REABRA SE TIVER CORAGEM.</span>";
+          }, 1000);
+        }, 350);
+      }
+    }, 90);
+  }
+
+  mirror.addEventListener("click", activate);
+  mirror.addEventListener("keydown", e => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      activate();
+    }
+  });
+})();
+</script>
+</body>
+</html>
